@@ -19,19 +19,19 @@ export default function StylesSection() {
 
   const handleDragOver = (e) => {
     e.preventDefault();
-    e.currentTarget.style.border = '3px dashed #000'; // Highlight the drop target
+    e.currentTarget.style.border = '3px dashed #000';
   };
 
   const handleDragLeave = (e) => {
-    e.currentTarget.style.border = 'none'; // Remove highlight
+    e.currentTarget.style.border = 'none'; 
   };
 
   const handleDrop = (e, index) => {
-    e.currentTarget.style.border = 'none'; // Remove highlight
+    e.currentTarget.style.border = 'none'; 
     const style = JSON.parse(e.dataTransfer.getData('style'));
     setComparisonImages((prevImages) => {
       const newImages = [...prevImages];
-      newImages[index] = style; // Store the entire style object
+      newImages[index] = style; 
       return newImages;
     });
   };
@@ -68,25 +68,32 @@ export default function StylesSection() {
         </div>
         {/* Compare boxes */}
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
-        {comparisonImages.map((style, index) => (
+          {comparisonImages.map((style, index) => (
             <div key={index}>
-            <p className="text-center mb-2 font-pop-sbold">Drag a style here to compare</p>
-            <div className="rounded-lg shadow-lg p-6 h-[400px] bg-gray-200 flex justify-center items-center relative" 
-                onDrop={(e) => handleDrop(e, index)} 
-                onDragOver={handleDragOver} 
-                onDragLeave={handleDragLeave}
-                style={{ border: 'none' }}>
-                {style && (
-                <>
+              <p className="text-center mb-2 font-pop-sbold">Drag a style here to compare</p>
+              <div className="rounded-lg shadow-lg p-6 h-[400px] bg-gray-200 flex justify-center items-center relative" 
+                  onDrop={(e) => handleDrop(e, index)} 
+                  onDragOver={handleDragOver} 
+                  onDragLeave={handleDragLeave}
+                  style={{ border: 'none' }}>
+                  {style && (
+                  <>
+                    <div className="absolute top-0 left-0 right-0 bg-gray-200 text-blue-900 rounded-t-lg flex items-center h-8 mt-1">
+                      <h5 className="text-2xl font-trend mb-2 w-full text-center">{style.name}</h5>
+                      <button onClick={() => handleRemoveImage(index)} className="text-blue-900 font-bold py-1 px-2 rounded-full text-xl w-8 h-8 flex justify-center items-center absolute top-0 right-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
                     <img src={style.images[imageIndex]} alt={style.name} className="w-full h-full object-cover rounded-lg" />
-                    <h3 className="absolute top-0 left-0 right-0 text-center text-off-white font-trend text-2xl bg-blue-900 opacity-75">{style.name}</h3>
-                    <button onClick={() => handleRemoveImage(index)} className="absolute top-0 right-0 text-red-500 bg-turquoise font-trend p-2 rounded-full">X</button>
-                </>
-                )}
+                  </>
+                  )}
+              </div>
             </div>
-            </div>
-        ))}
+          ))}
         </div>
+
 
     </section>
   );

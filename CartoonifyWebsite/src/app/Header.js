@@ -1,23 +1,40 @@
+"use client"
+
+
+
+import React from 'react';
+
 function Header() {
-    return (
-      <header className="flex justify-between items-center h-20 bg-blue-900 text-turquoise-400 font-trend">
-        <div className="flex items-center ml-10">
-          <h6 className="text-4xl m-0 mb-4">Cartoonify</h6>
-        </div>
-        <nav className="flex gap-6 items-center mr-16 text-sm">
-          <a href="/" className="font-trend mb-2">Home</a>
-          <a href="/gallery" className="font-trend mb-2">Gallery</a>
-          <a href="#about" className="font-trend mb-2">About</a>
-          <a href="#service" className="font-trend mb-2">Service</a>
-          <a href="#tutorial" className="font-trend mb-2">Tutorial</a>
-          <a href="#contact" className="font-trend mb-2">Contact</a>
-          <a href="/cartoonize" className="font-trend bg-turquoise text-off-white border pb-3 px-1 p-2 cursor-pointer rounded-md flex items-center">
+  return (
+    <header className="flex justify-between items-center h-20 bg-blue-900 text-turquoise-400 font-trend lg:px-10 md:px-4 sm:px-2">
+      <div className="flex items-center">
+        <h6 className="text-4xl m-0 mb-4 lg:text-4xl md:text-3xl sm:text-2xl">Cartoonify</h6>
+      </div>
+      <nav className="flex gap-6 items-center mr-16 text-sm">
+        {/* For large screens */}
+        <a href="/" className="font-trend mb-2 lg:inline hidden">Home</a>
+        <a href="/gallery" className="font-trend mb-2 lg:inline hidden">Gallery</a>
+        <a href="#about" className="font-trend mb-2 lg:inline hidden">About</a>
+        <a href="#service" className="font-trend mb-2 lg:inline hidden">Service</a>
+        <a href="#tutorial" className="font-trend mb-2 lg:inline hidden">Tutorial</a>
+        <a href="#contact" className="font-trend mb-2 lg:inline hidden">Contact</a>
+        <a href="/cartoonize" className="font-trend bg-turquoise text-off-white border pb-3 px-1 p-2 cursor-pointer rounded-md flex items-center lg:inline hidden">
           Cartoonize
         </a>
-        </nav>
-      </header>
-    );
-  }
-  
-  export default Header;
-  
+
+        {/* For small screens */}
+        <a href="/" className="lg:hidden">
+          <i className="fas fa-home"></i>
+        </a>
+        <a href="/gallery" className="lg:hidden">
+          <i className="fas fa-images"></i>
+        </a>
+        <a href="/cartoonize" className="bg-turquoise text-off-white border pb-3 px-1 p-2 cursor-pointer rounded-md flex items-center lg:hidden">
+          <i className="fas fa-paint-brush"></i>
+        </a>
+      </nav>
+    </header>
+  );
+}
+
+export default Header;
