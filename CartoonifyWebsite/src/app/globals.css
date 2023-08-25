@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --turquoise: #40E0D0;
+  --turquoise-dark: #30C0B0; /* Adjust as needed for hover effect */
+  --off-white: #F5F5F5;
+  --off-whitep: #9c9c9c;
+}
+
+.bg-turquoise {
+  background-color: var(--turquoise);
+}
+
+.text-off-white {
+  color: var(--off-white);
+}
+
+.text-off-whitep {
+  color: var(--off-whitep);
+}
+
+.bg-off-white {
+  background-color: var(--off-white);
+}
+
+.about-section {
+  height: 700px;
+}
+
+
+@font-face {
+  font-family: 'Trend';
+  src: url('./fonts/trend/TrendSansFour.eot');
+  src: local('Trend Sans Four'), local('TrendSansFour'),
+      url('./fonts/trend/TrendSansFour.eot?#iefix') format('embedded-opentype'),
+      url('./fonts/trend/TrendSansFour.woff') format('woff'),
+      url('./fonts/trend/TrendSansFour.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins-Thin';
+  src: url('./fonts/Poppins/Poppins-Light.ttf') format('truetype');
+  font-style: thin;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Poppins-SemiBold';
+  src: url('./fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
