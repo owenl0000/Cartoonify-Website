@@ -1,4 +1,4 @@
-// components/TutorialSection.js
+
 import React, { useState } from 'react';
 
 export default function TutorialSection() {
@@ -28,7 +28,7 @@ export default function TutorialSection() {
       <div className="space-y-8">
         {/* Steps */}
         {[1, 2, 3, 4, 5].map((step, index) => (
-          <div className={`flex flex-wrap ${index % 2 === 1 ? 'flex-wrap-reverse' : ''}`}>
+          <div key={index} className={`flex flex-wrap ${index % 2 === 1 ? 'flex-wrap-reverse' : ''}`}>
             <div className="w-full lg:w-1/2 p-4 flex flex-col justify-center">
               <h3 className="font-trend text-2xl mb-2">Step {step}: Title</h3>
               <p className="font-pop-thin">Here is how to do step {step}...</p>
