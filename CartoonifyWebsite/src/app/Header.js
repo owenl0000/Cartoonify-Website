@@ -1,5 +1,11 @@
 "use client"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHomeLg,
+  faImage,
+  faPaintbrush,
+} from "@fortawesome/free-solid-svg-icons";
 
 
 import React from 'react';
@@ -24,13 +30,13 @@ function Header() {
 
         {/* For small screens */}
         <a href="/" className="lg:hidden">
-          <i className="fas fa-home"></i>
+          <FontAwesomeIcon icon={faHomeLg} style={{ fontSize: 20, color: '#40E0D0' }}/>
         </a>
         <a href="/gallery" className="lg:hidden">
-          <i className="fas fa-images"></i>
+          <FontAwesomeIcon icon={faImage} style={{ fontSize: 20, color: '#40E0D0' }}/>
         </a>
         <a href="/cartoonize" className="bg-turquoise text-off-white border pb-3 px-1 p-2 cursor-pointer rounded-md flex items-center lg:hidden">
-          <i className="fas fa-paint-brush"></i>
+          <FontAwesomeIcon icon={faPaintbrush} style={{ fontSize: 20, color: '#F5F5F5' }}/>
         </a>
       </nav>
     </header>

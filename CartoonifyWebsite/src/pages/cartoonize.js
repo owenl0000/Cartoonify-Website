@@ -3,12 +3,6 @@ import Header from '../app/Header';
 import '../app/globals.css';
 import React, { useState, useEffect} from 'react';
 
-
-const sleep = (milliseconds) => {
-  return new Promise(resolve => setTimeout(resolve, milliseconds));
-}
-
-
 export default function Cartoonize() {
   const [uploadedImageUrl, setUploadedImageUrl] = useState(null);
   const [generatedImageUrl, setGeneratedImageUrl] = useState(null);
@@ -27,11 +21,8 @@ export default function Cartoonize() {
         const data = await response.json();
         setGeneratedImageUrl(data.img_url);
 
-        // Instead of sleep, consider using a more robust method to know when the image is ready
-        await sleep(5000);
 
-        // Update the image using React state
-        setGeneratedImageUrl("http://208.167.255.60/media/output.png");
+
       } else {
         console.error('Failed to upload image');
         console.error('Response:', response);
@@ -57,28 +48,39 @@ export default function Cartoonize() {
                   { generatedImageUrl ? <img src={generatedImageUrl} alt="Generated Image" className="w-full h-full object-cover" /> : 'Generated Image' }
                 </div>
               </div>
+              {/* Labels */}
               <div className="flex flex-col gap-4">
-                <label className="font-pop-sbold text-lg">
+                <label htmlFor="nameInput" className="font-pop-sbold text-lg">
                   Name:&nbsp;
-                  <input type="text" name="name" className="border p-2 rounded-md" placeholder="Enter your name" />
                 </label>
+                <input id="nameInput" type="text" name="name" className="border p-2 rounded-md" placeholder="Enter your name" />
+
                 <label className="font-pop-sbold text-lg">
                   Upload Image:&nbsp;
-                  <input type="file" name="img" className="border p-2 rounded-md" onChange={(e) => setUploadedImageUrl(URL.createObjectURL(e.target.files[0]))} />
                 </label>
-                <label className="font-pop-sbold text-lg">
+                <div className="custom-file-upload">
+                  <button type="button" onClick={() => document.getElementById('hiddenFileInput').click()} className="border p-2 rounded-md">
+                    Choose File
+                  </button>
+                  <input id="hiddenFileInput" type="file" name="img" style={{ display: 'none' }} onChange={(e) => {
+                      if (e.target.files && e.target.files[0]) { setUploadedImageUrl(URL.createObjectURL(e.target.files[0])); } }}/>
+                </div>
+
+                <label htmlFor="styleSelect" className="font-pop-sbold text-lg">
                   Choose Style:&nbsp;
-                  <select name="style" className="border p-2 rounded-md">
-                    <option value="Shinkai">Shinkai</option>
-                    <option value="Hayao">Hayao</option>
-                    <option value="Paprika">Paprika</option>
-                    <option value="Hosoda">Hosoda</option>
-                  </select>
                 </label>
+                <select id="styleSelect" name="style" className="border p-2 rounded-md">
+                  <option value="Shinkai">Shinkai</option>
+                  <option value="Hayao">Hayao</option>
+                  <option value="Paprika">Paprika</option>
+                  <option value="Hosoda">Hosoda</option>
+                </select>
+
                 <button type="submit" className="font-trend bg-turquoise text-off-white px-6 py-2 rounded-md text-center hover:bg-turquoise-dark pb-3">
                   Generate
                 </button>
               </div>
+
             </div>
           </form>
         </section>
