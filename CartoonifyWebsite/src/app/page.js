@@ -34,7 +34,7 @@ export default function Home() {
           </section>
         </div>
         {/* About Section */}
-        <section className="bg-off-white flex flex-col justify-center items-center h-[80vh] p-8">
+        <section id="About" className="bg-off-white flex flex-col justify-center items-center h-[80vh] p-8">
           <div className="bg-blue-900 py-12 w-full h-[60vh] rounded-lg overflow-hidden flex flex-col">
             <h4 className="font-trend text-off-white text-5xl text-center mb-10">About</h4>
             <div className="px-8 lg:px-16 xl:px-24 flex-grow overflow-y-auto flex justify-center">
@@ -47,7 +47,7 @@ export default function Home() {
           </div>
         </section>
         {/* Style Section */}
-        <StylesSection />
+        <StylesSection id="#Styles"/>
 
 
       </main>

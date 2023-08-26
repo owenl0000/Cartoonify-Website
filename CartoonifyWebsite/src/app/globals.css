@@ -30,28 +30,74 @@
   height: 700px;
 }
 
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+.bg-cerulean {
+  background-color: #4a90e2;
+}
+
+.bg-forest-green {
+  background-color: #4CAF50;
+}
+
+.bg-dreamy-purple {
+  background-color: #9370DB;
+}
+
+.bg-earthy-brown {
+  background-color: #A0522D;
+}
+
+.text-cerulean {
+  color: #4a90e2;
+}
+
+.text-forest-green {
+  color: #4CAF50;
+}
+
+.text-dreamy-purple {
+  color: #9370DB;
+}
+
+.text-earthy-brown {
+  color: #A0522D;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 @font-face {
   font-family: 'Trend';
-  src: url('./fonts/trend/TrendSansFour.eot');
+  src: url('/fonts/trend/TrendSansFour.eot');
   src: local('Trend Sans Four'), local('TrendSansFour'),
-      url('./fonts/trend/TrendSansFour.eot?#iefix') format('embedded-opentype'),
-      url('./fonts/trend/TrendSansFour.woff') format('woff'),
-      url('./fonts/trend/TrendSansFour.ttf') format('truetype');
+      url('/fonts/trend/TrendSansFour.eot?#iefix') format('embedded-opentype'),
+      url('/fonts/trend/TrendSansFour.woff') format('woff'),
+      url('/fonts/trend/TrendSansFour.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Poppins-Thin';
-  src: url('./fonts/Poppins/Poppins-Light.ttf') format('truetype');
+  src: url('/fonts/Poppins/Poppins-Light.ttf') format('truetype');
   font-style: thin;
   font-weight: 100;
 }
 
 @font-face {
   font-family: 'Poppins-SemiBold';
-  src: url('./fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+  src: url('/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
