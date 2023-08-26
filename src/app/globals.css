@@ -79,11 +79,11 @@
 
 @font-face {
   font-family: 'Trend';
-  src: url('/fonts/trend/TrendSansFour.eot');
+  src: url('/fonts/Trend/TrendSansFour.eot');
   src: local('Trend Sans Four'), local('TrendSansFour'),
-      url('/fonts/trend/TrendSansFour.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/trend/TrendSansFour.woff') format('woff'),
-      url('/fonts/trend/TrendSansFour.ttf') format('truetype');
+      url('/fonts/Trend/TrendSansFour.eot?#iefix') format('embedded-opentype'),
+      url('/fonts/Trend/TrendSansFour.woff') format('woff'),
+      url('/fonts/Trend/TrendSansFour.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
