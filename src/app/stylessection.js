@@ -45,7 +45,7 @@ export default function StylesSection() {
 
 
   return (
-    <section className="bg-off-white py-12">
+    <section id="Styles" className="bg-off-white py-12">
     {/* Types of Styles */}
       <h2 className="font-trend text-5xl text-center mb-10">Styles</h2>
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-8">

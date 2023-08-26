@@ -57,7 +57,7 @@ export default function Cartoonize() {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-        window.URL.revokeObjectURL(objectURL); // Revoke the object URL
+        window.URL.revokeObjectURL(objectURL); 
       })
       .catch(console.error);
   };
@@ -88,7 +88,7 @@ export default function Cartoonize() {
                   </>
                 ) : (
                   isGenerating ? (
-                    <div className="loader"></div> // Loading spinner
+                    <div className="loader"></div>
                   ) : (
                     'Upload an image to generate'
                   )

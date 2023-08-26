@@ -5,6 +5,7 @@ import '../app/globals.css';
 import Slideshow from '../app/Slideshow';
 import Header from '../app/Header.js';
 import StylesSection from './stylessection';
+import TutorialSection from './TutorialSection';
 import 'font-awesome/css/font-awesome.min.css';
 
 
@@ -39,7 +40,7 @@ export default function Home() {
             <h4 className="font-trend text-off-white text-5xl text-center mb-10">About</h4>
             <div className="px-8 lg:px-16 xl:px-24 flex-grow overflow-y-auto flex justify-center">
               <div className="max-w-screen-md text-center">
-                <p className="font-pop-thin text-off-white text-justify text-[23px] mb-[50px] leading-loose">
+                <p className="font-pop-thin text-off-whitep text-justify text-[23px] mb-[50px] leading-loose">
                   At Cartoonify, we are a group of four highly motivated students from CUNY Tech Prep. Our hackathon project uses AI to transform your favorite images into whimsical, cartoon art. Our goal is to provide our users with a unique and fun way to showcase their photos and memories.
                 </p>
               </div>
@@ -47,8 +48,9 @@ export default function Home() {
           </div>
         </section>
         {/* Style Section */}
-        <StylesSection id="#Styles"/>
-
+        <StylesSection/>
+        {/* Tutorial Section */}
+        <TutorialSection/>
 
       </main>
 

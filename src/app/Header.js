@@ -10,6 +10,21 @@ import {
 
 import React from 'react';
 
+
+const handleSmoothScroll = (e) => {
+  e.preventDefault();
+  const targetId = e.currentTarget.getAttribute("href").substring(1);
+  const targetElement = document.getElementById(targetId);
+
+  if (targetElement) {
+    window.scrollTo({
+      top: targetElement.offsetTop,
+      behavior: "smooth",
+    });
+  }
+};
+
+
 function Header() {
   return (
     <header className="flex justify-between items-center h-20 bg-blue-900 text-turquoise-400 font-trend lg:px-10 md:px-4 sm:px-2">
@@ -20,10 +35,10 @@ function Header() {
         {/* For large screens */}
         <a href="/" className="font-trend mb-2 lg:inline hidden">Home</a>
         <a href="/gallery" className="font-trend mb-2 lg:inline hidden">Gallery</a>
-        <a href="#About" className="font-trend mb-2 lg:inline hidden">About</a>
-        <a href="#Styles" className="font-trend mb-2 lg:inline hidden">Styles</a>
-        <a href="#Tutorial" className="font-trend mb-2 lg:inline hidden">Tutorial</a>
-        <a href="#Contact" className="font-trend mb-2 lg:inline hidden">Contact</a>
+        <a href="#About" onClick={handleSmoothScroll} className="font-trend mb-2 lg:inline hidden">About</a>
+        <a href="#Styles" onClick={handleSmoothScroll} className="font-trend mb-2 lg:inline hidden">Styles</a>
+        <a href="#Tutorial" onClick={handleSmoothScroll} className="font-trend mb-2 lg:inline hidden">Tutorial</a>
+        <a href="#Contact" onClick={handleSmoothScroll} className="font-trend mb-2 lg:inline hidden">Contact</a>
         <a href="/cartoonize" className="font-trend bg-turquoise text-off-white border pb-3 px-1 p-2 cursor-pointer rounded-md flex items-center lg:inline hidden">
           Cartoonize
         </a>
