@@ -1,6 +1,6 @@
 "use client"
 import Header from '../src/app/Header';
-import '../src/app/global.css';
+import '../src/app/globals.css';
 import React, { useState, useEffect} from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
