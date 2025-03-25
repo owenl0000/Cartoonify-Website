@@ -1,11 +1,11 @@
 "use client"
 import Image from 'next/image';
 import { headers } from '../next.config';
-import 'src/app/globals.css';
-import Slideshow from 'src/app/Slideshow';
-import Header from 'src/app/Header.js';
-import StylesSection from 'src/app/stylessection';
-import TutorialSection from 'src/app/TutorialSection';
+import '../src/app/globals.css';
+import Slideshow from '../src/app/Slideshow';
+import Header from '../src/app/Header.js';
+import StylesSection from '../src/app/stylessection';
+import TutorialSection from '../src/app/TutorialSection';
 import 'font-awesome/css/font-awesome.min.css';
 
 
